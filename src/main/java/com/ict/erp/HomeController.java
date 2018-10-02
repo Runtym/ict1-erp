@@ -28,10 +28,8 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
-		
 		//RionPark modified delete attribute and put null
 		model.addAttribute("serverTime", null );
-		
 		return "home";
 	}
 	
