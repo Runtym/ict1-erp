@@ -28,13 +28,8 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		//test git duplicate
-		model.addAttribute("serverTime", formattedDate );
-		
+		//RionPark modified delete attribute and put null
+		model.addAttribute("serverTime", null );
 		return "home";
 	}
 	
