@@ -7,7 +7,7 @@ class Init{
 public class Test {
 	
 	private Init i;
-	
+	//test
 	public Test() {
 		
 	}
