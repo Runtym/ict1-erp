@@ -10,7 +10,7 @@ public class LevelInfo {
 	private String liname;
 	private String lidesc;
 	public Integer getLinum() {
-		return linum;
+		return linum; 
 	}
 	public void setLinum(Integer linum) {
 		this.linum = linum;

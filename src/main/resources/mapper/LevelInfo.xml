@@ -5,6 +5,13 @@
 <mapper namespace="SQL.LEVELINFO">
   <select id="selectLevelInfo" resultType="li">
     select * from level_info 
+    <where>
+  		<if test="linum!=null">and linum = #{linum}</if>
+  		<if test="lilevel!=null">and lilevel = #{lilevel}</if>
+  		<if test="liname!=null">and liname like '%'||#{liname}||'%'</if>
+  		<if test="lidesc!=null">and lidesc = #{lidesc}</if>
+    </where>
+    order by linum 
   </select>
   <insert id="insertLevelInfo" parameterType="li">
   	insert into level_info(linum, lilevel, liname, lidesc)
@@ -19,7 +26,7 @@
   	</set>
   	where linum=#{linum}
   </update>
-  <delete id="deleteLevelInfo" parameterType="li">
+  <delete id="deleteLevelInfo" parameterType="int">
   	delete from level_info
   	where linum=#{linum}
   </delete>
