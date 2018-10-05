@@ -1,5 +1,6 @@
 package com.ict.erp.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ict.erp.service.LevelInfoService;
 import com.ict.erp.vo.LevelInfo;
 
@@ -48,10 +52,4 @@ public class LevelInfoController {
 	}
 	
 
-	@RequestMapping(value="/levelinfos",method=RequestMethod.PUT)
-	@ResponseBody 
-	public Integer deleteLevelInfoList(@RequestBody  List<LevelInfo> delList) {
-		System.out.println(delList);
-		return delList.size(); 
-	}
 }
