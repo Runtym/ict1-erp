@@ -29,5 +29,14 @@ public class LevelInfoServiceImpl implements LevelInfoService {
 		// TODO Auto-generated method stub
 		return lidao.deleteLevelInfo(linum);
 	}
+	@Override
+	public LevelInfo getLevelInfo(Integer linum) {
+		// TODO Auto-generated method stub
+		return lidao.getLevelInfoList(linum);
+	}
+	@Override
+	public int updateLevelInfo(LevelInfo li) {
+		return lidao.updateLevelInfo(li);
+	}
 
 }
