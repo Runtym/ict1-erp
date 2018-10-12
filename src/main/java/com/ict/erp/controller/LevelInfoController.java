@@ -47,4 +47,11 @@ public class LevelInfoController {
 		return lis.deleteLevelInfo(linum)+""; 
 	}
 
+
+	@RequestMapping(value="/levelinfo2/{linum}",method=RequestMethod.PUT)
+	@ResponseBody 
+	public Integer testLevelInfo(@RequestBody LevelInfo li,@PathVariable Integer linum) {
+		li.setLinum(linum);
+		return lis.testTransaction(li);
+	}
 }

@@ -7,12 +7,13 @@
 <title>Insert title here</title>
 </head>
 <script>
+
 var AjaxUtil = function(conf){
 	var xhr = new XMLHttpRequest();
 	var url = conf.url;
 	var method = conf.method?conf.method:'GET';
 	var param = conf.param?conf.param:'{}';
-	
+
 	var success = conf.success?conf.success:function(res){
 		alert(res);
 	}
@@ -25,6 +26,13 @@ var AjaxUtil = function(conf){
 			if(xhr.status=="200"){
 				success(xhr.responseText);
 			}else{
+				try{
+					var res = JSON.parse(xhr.responseText);
+					alert(res.errorMsg);
+					return;
+				}catch(e){
+					
+				}
 				error(xhr.responseText);
 			}
 		}
@@ -32,7 +40,7 @@ var AjaxUtil = function(conf){
 	xhr.open(method,url);
 	if(method!='GET'){
 		xhr.setRequestHeader('Content-type','application/json;charset=utf-8');
-	}
+	} 
 	this.send = function(){
 		xhr.send(param);
 	}
@@ -58,10 +66,12 @@ function initList(){
 					html += '</tr>';
 				} 
 				document.querySelector('#liBody').insertAdjacentHTML('beforeend',html);
+				alert(2);
 			}
 	}
 	var au = new AjaxUtil(conf);
 	au.send();
+	alert(1);
 }
 </script>
 <body> 
@@ -121,7 +131,7 @@ function updateLevelInfo(linum){
 	params = JSON.stringify(params);
 	
 	var conf = {
-			url : '/levelinfo/' + linum,
+			url : '/levelinfo2/' + linum,
 			method : 'PUT',
 			param : params,
 			success : function(res){

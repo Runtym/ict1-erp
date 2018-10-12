@@ -13,7 +13,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ict.erp.dao.NaverTransDAO;
 import com.ict.erp.vo.NaverMsg;
 
-@Repository
 public class NaverTransDAOImpl implements NaverTransDAO {
 	private String clientId;
 	private String clientSecret;
@@ -84,7 +83,10 @@ public class NaverTransDAOImpl implements NaverTransDAO {
 		HttpURLConnection con = null;
 		BufferedReader br = null;
 		try {
-			String text = URLEncoder.encode(eMsg.substring(0,300), "UTF-8");
+			if(eMsg.length()>300) {
+				eMsg = eMsg.substring(0,300);
+			}
+			String text = URLEncoder.encode(eMsg, "UTF-8");
 			URL url = new URL(apiURL);
 			con = (HttpURLConnection) url.openConnection();
 			con.setRequestMethod("POST");

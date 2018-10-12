@@ -1,10 +1,6 @@
-package com.ict.erp;
+package com.ict.erp.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.Locale;
-
-import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
