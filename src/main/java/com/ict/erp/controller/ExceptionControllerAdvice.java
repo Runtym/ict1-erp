@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ict.erp.dao.NaverTransDAO;
 
-@ControllerAdvice
+//@ControllerAdvice
 public class ExceptionControllerAdvice {
 	private static final Logger log = LoggerFactory.getLogger(ExceptionControllerAdvice.class);
 

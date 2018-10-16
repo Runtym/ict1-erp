@@ -27,5 +27,5 @@
 	
 	<context:component-scan base-package="com.ict.erp.controller" />
 	<aop:aspectj-autoproxy/>
-	<beans:bean class="com.ict.erp.aop.log.LogAspect"/>
+	<!-- <beans:bean class="com.ict.erp.aop.log.LogAspect"/> -->
 </beans:beans>

@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="SQL.LEVELINFO">
   <select id="selectLevelInfoList" resultType="li">
-    select * from level_info 
+    select lip from level_info 
     <where>
   		<if test="linum!=null">and linum = #{linum}</if>
   		<if test="lilevel!=null">and lilevel = #{lilevel}</if>

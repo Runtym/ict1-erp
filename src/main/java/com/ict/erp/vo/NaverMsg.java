@@ -36,6 +36,24 @@ public class NaverMsg {
 			public void setTranslatedText(String translatedText) {
 				this.translatedText = translatedText;
 			}
+
+			@Override
+			public String toString() {
+				return "Result [translatedText=" + translatedText + "]";
+			}
+			
 		}
+		@Override
+		public String toString() {
+			return "Message [result=" + result + "]";
+		}
+		
 	}
+
+	@Override
+	public String toString() {
+		return "NaverMsg [message=" + message + "]";
+	}
+	
+	
 }
