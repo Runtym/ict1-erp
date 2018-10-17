@@ -242,5 +242,13 @@
 			<artifactId>cglib-nodep</artifactId>
 			<version>2.2.2</version>
 		</dependency>
+		
+		<!-- lombok -->
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.16.22</version>
+		    <scope>provided</scope>
+		</dependency>
 	</dependencies>
 </project>

@@ -54,4 +54,12 @@ public class LevelInfoController {
 		li.setLinum(linum);
 		return lis.testTransaction(li);
 	}
+
+
+	@RequestMapping(value="/levelinfo3/{linum}",method=RequestMethod.PUT)
+	@ResponseBody 
+	public Integer testLevelInfo2(@RequestBody LevelInfo li,@PathVariable Integer linum) {
+		li.setLinum(linum);
+		return lis.testTransaction2(li);
+	}
 }

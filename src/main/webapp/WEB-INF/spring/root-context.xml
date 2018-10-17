@@ -75,7 +75,7 @@
 	<context:component-scan base-package="com.ict.erp.dao" />
 	<context:component-scan base-package="com.ict.erp.aop" />
 	
-	<bean id="aet" class="com.ict.erp.dao.impl.NaverTransDAOImpl">
+	<bean id="ntdao" class="com.ict.erp.dao.impl.NaverTransDAOImpl">
 		<property name="clientId" value="uFjJWa3h7CwVFykiz0Oa"></property>
 		<property name="clientSecret" value="Chrzy0_Vpn"></property>
 		<property name="clientIdAdd" value="X-Naver-Client-Id"></property>

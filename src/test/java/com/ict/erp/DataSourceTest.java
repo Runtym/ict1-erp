@@ -1,5 +1,7 @@
 package com.ict.erp;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -21,16 +23,9 @@ public class DataSourceTest {
 	
 	@Test
 	public void test() {
-		LevelInfo li = new LevelInfo();
-		//linum=1, lilevel=1, liname=일반, lidesc=일반사용자]
-		li.setLidesc("일반사용자");
-		li.setLiname("일반");
-		li.setLilevel(1);
-		List<LevelInfo> liList = ss.selectList("SQL.LEVELINFO.selectLevelInfo",li);
+		List<LevelInfo> liList = ss.selectList("SQL.LEVELINFO.selectLevelInfoList");
 		
-		for(LevelInfo li2 : liList) {
-			System.out.println(li2);
-		}
+		assertEquals(liList.size(), 3);
 	}
 
 }

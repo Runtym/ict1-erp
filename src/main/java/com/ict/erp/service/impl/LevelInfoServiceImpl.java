@@ -9,7 +9,10 @@ import com.ict.erp.dao.LevelInfoDAO;
 import com.ict.erp.service.LevelInfoService;
 import com.ict.erp.vo.LevelInfo;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class LevelInfoServiceImpl implements LevelInfoService {
 
 	@Autowired
@@ -44,5 +47,12 @@ public class LevelInfoServiceImpl implements LevelInfoService {
 		cnt = lidao.insertLevelInfo(li);
 		return cnt;
 	}
-	
+
+	@Override
+	public int testTransaction2(LevelInfo li) {
+		int cnt  = lidao.updateLevelInfo(li);
+		System.out.println(getLevelInfo(li.getLinum()));
+		cnt = lidao.updateLevelInfoWithError(li);
+		return cnt;
+	}
 }

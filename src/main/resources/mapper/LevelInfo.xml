@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="SQL.LEVELINFO">
   <select id="selectLevelInfoList" resultType="li">
-    select lip from level_info 
+    select * from level_info 
     <where>
   		<if test="linum!=null">and linum = #{linum}</if>
   		<if test="lilevel!=null">and lilevel = #{lilevel}</if>
@@ -12,6 +12,10 @@
   		<if test="lidesc!=null">and lidesc = #{lidesc}</if>
     </where>
     order by linum 
+  </select>
+    <select id="selectLevelInfoList2" resultType="li">
+    select li.*, mi.miid as "mi.miid" from level_info li, member_info MI
+    order by li.linum 
   </select>
   <select id="selectLevelInfo" resultType="li">
     select * from level_info 
@@ -30,6 +34,13 @@
   	</set>
   	where linum=#{linum}
   </update>
+  
+  <update id="updateLevelInfoWithError" parameterType="li">
+  	update level_info
+  	set litest=#{linum}
+  	where linum=#{linum}
+  </update>
+  
   <delete id="deleteLevelInfo" parameterType="int">
   	delete from level_info
   	where linum=#{linum1}

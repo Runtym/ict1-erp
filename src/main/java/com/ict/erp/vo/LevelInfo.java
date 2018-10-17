@@ -9,6 +9,14 @@ public class LevelInfo {
 	private Integer lilevel;
 	private String liname;
 	private String lidesc;
+	private MeberInfo mi;
+	
+	public MeberInfo getMi() {
+		return mi;
+	}
+	public void setMi(MeberInfo mi) {
+		this.mi = mi;
+	}
 	public Integer getLinum() {
 		return linum; 
 	}
@@ -35,8 +43,10 @@ public class LevelInfo {
 	}
 	@Override
 	public String toString() {
-		return "LevelInfo [linum=" + linum + ", lilevel=" + lilevel + ", liname=" + liname + ", lidesc=" + lidesc + "]";
+		return "LevelInfo [linum=" + linum + ", lilevel=" + lilevel + ", liname=" + liname + ", lidesc=" + lidesc
+				+ ", mi=" + mi + "]";
 	}
+	
 	
 	
 }
