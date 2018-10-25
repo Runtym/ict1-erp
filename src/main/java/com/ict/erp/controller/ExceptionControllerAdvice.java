@@ -24,9 +24,9 @@ public class ExceptionControllerAdvice {
 	private NaverTransDAO ntd;
 	
     @ExceptionHandler(value=SQLException.class)
-    public @ResponseBody ResponseEntity<Map<String, String>> SQLExceptionHandler(SQLException ex) throws IOException{
+    public @ResponseBody ResponseEntity<Map<String, String>> sQLExceptionHandler(SQLException ex) throws IOException{
 		log.error("error=>{}", ex);
-		Map<String, String> map = new HashMap<String, String>();
+		Map<String, String> map = new HashMap<>();
 		map.put("errorMsg", ntd.getText(ex.getMessage()));
 		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(map);
 

@@ -7,8 +7,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
-import org.springframework.stereotype.Repository;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ict.erp.dao.NaverTransDAO;
 import com.ict.erp.vo.NaverMsg;

@@ -19,7 +19,12 @@ public class LevelInfoController {
 
 	@Autowired
 	private LevelInfoService lis;
-
+	
+	@RequestMapping(value="/linum",method=RequestMethod.GET)
+	public @ResponseBody Integer getLinum() {
+		return lis.getLinum();
+	}
+	
 	@RequestMapping(value="/levelinfo",method=RequestMethod.GET)
 	public @ResponseBody List<LevelInfo> getLevelInfoList(@ModelAttribute LevelInfo li) {
 		return lis.getLevelInfoList(li);
@@ -29,15 +34,15 @@ public class LevelInfoController {
 		return lis.getLevelInfo(linum);
 	}
 
-	@RequestMapping(value="/levelinfo",method=RequestMethod.POST)
+	@RequestMapping(value="/levelinfo/{linum}",method=RequestMethod.POST)
 	@ResponseBody 
-	public Integer insertLevelInfo(@RequestBody LevelInfo li) {
+	public Integer insertLevelInfo(@RequestBody LevelInfo li,@PathVariable Integer linum) {
 		return lis.insertLevelInfo(li); 
 	}
 
 	@RequestMapping(value="/levelinfo/{linum}",method=RequestMethod.PUT)
 	@ResponseBody 
-	public Integer updateLevelInfo(@RequestBody LevelInfo li,@PathVariable Integer linum) {
+	public Integer updateLevelInfo(@ModelAttribute LevelInfo li,@PathVariable Integer linum) {
 		li.setLinum(linum);
 		return lis.updateLevelInfo(li);
 	}

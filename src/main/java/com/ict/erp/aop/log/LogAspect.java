@@ -22,7 +22,7 @@ public class LogAspect {
 	public Object aroundLog(ProceedingJoinPoint pjp)
 			throws Throwable {
 		log.info("@Around start");
-		log.info("pjp=>",pjp);
+		log.info("pjp=>{}",pjp);
 		Object obj = null;
 		long startTime = System.currentTimeMillis();
 		try {

@@ -18,7 +18,7 @@ public class LombokTest {
 		tvo.setT3("t3");
 		tvo.setT4("t4");
 		log.info("tvo=>{}",tvo);
-		assertEquals(tvo.getTest(), "abc");
+		assertEquals("abc",tvo.getTest());
 	}
 
 }

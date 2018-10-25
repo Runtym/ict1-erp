@@ -46,7 +46,4 @@ public class LevelInfo {
 		return "LevelInfo [linum=" + linum + ", lilevel=" + lilevel + ", liname=" + liname + ", lidesc=" + lidesc
 				+ ", mi=" + mi + "]";
 	}
-	
-	
-	
 }

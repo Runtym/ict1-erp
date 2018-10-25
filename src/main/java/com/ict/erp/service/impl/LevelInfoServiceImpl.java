@@ -17,24 +17,30 @@ public class LevelInfoServiceImpl implements LevelInfoService {
 
 	@Autowired
 	private LevelInfoDAO lidao;
+	
+	public void tt() {
+		log.debug("abc");
+		log.debug("test");
+	}
+
 	@Override
 	public List<LevelInfo> getLevelInfoList(LevelInfo li) {
-		// TODO Auto-generated method stub
+		
 		return lidao.getLevelInfoList(li);
 	}
 	@Override
 	public int insertLevelInfo(LevelInfo li) {
-		// TODO Auto-generated method stub
+		
 		return lidao.insertLevelInfo(li);
 	}
 	@Override
 	public int deleteLevelInfo(int linum) {
-		// TODO Auto-generated method stub
+		
 		return lidao.deleteLevelInfo(linum);
 	}
 	@Override
 	public LevelInfo getLevelInfo(Integer linum) {
-		// TODO Auto-generated method stub
+		
 		return lidao.getLevelInfoList(linum);
 	}
 	@Override
@@ -44,15 +50,26 @@ public class LevelInfoServiceImpl implements LevelInfoService {
 	@Override
 	public int testTransaction(LevelInfo li) {
 		int cnt  = lidao.updateLevelInfo(li);
-		cnt = lidao.insertLevelInfo(li);
+		cnt += lidao.insertLevelInfo(li);
 		return cnt;
 	}
 
 	@Override
 	public int testTransaction2(LevelInfo li) {
 		int cnt  = lidao.updateLevelInfo(li);
-		System.out.println(getLevelInfo(li.getLinum()));
-		cnt = lidao.updateLevelInfoWithError(li);
+		log.debug("{}",getLevelInfo(li.getLinum()));
+		cnt += lidao.updateLevelInfoWithError(li);
 		return cnt;
+	}
+	@Override
+	public int test() {
+		
+		return 0;
+	}
+
+	@Override
+	public int getLinum() {
+		// TODO Auto-generated method stub
+		return lidao.getLinum();
 	}
 }
