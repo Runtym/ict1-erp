@@ -158,10 +158,10 @@
 		<!-- commons-dbcp2 -->
 		<!-- Hikaricp -->
 		<dependency>
-		    <groupId>com.zaxxer</groupId>
-		    <artifactId>HikariCP</artifactId>
-		    <version>2.4.3</version>
-		</dependency>
+	        <groupId>com.zaxxer</groupId>
+	        <artifactId>HikariCP-java7</artifactId>
+	        <version>2.4.13</version>
+	    </dependency>
 
 		<!-- mybatis -->
 		<dependency>
@@ -258,4 +258,7 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+	<build>
+		<finalName>ict</finalName>
+	</build>
 </project>
