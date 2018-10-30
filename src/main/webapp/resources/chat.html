@@ -45,11 +45,12 @@ function send(t){
 	}
 	var name = getEl('name').value
 	var msg = getEl('msg').value;
-	ws.send(name + ' : ' +msg);
+	ws.send(msg);
 	getEl('chat').value += '나 : ' + msg + '\n';
 	getEl('msg').value = '';
 }
 window.addEventListener('load',doInit);
+document.oncontextmenu=function(){return false;} // 우클릭 방지
 </script>
 </body>
 </html>

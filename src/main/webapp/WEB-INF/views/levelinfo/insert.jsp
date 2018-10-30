@@ -15,7 +15,7 @@
 	</c:if>
 </c:if>
 </script>
-<form action="/levelinfo" method="post">
+<form action="/levelinfo/111" method="post">
 	liname : <input type="text" name="liname"><br>
 	lilevel : <input type="text" name="lilevel"><br>
 	lidesc : <input type="text" name="lidesc"><br>
